@@ -22,6 +22,7 @@ public class FrameController extends JFrame {
 	StatsPanel statsPanel;
 
 	public FrameController() {
+
 		init();
 	}
 
@@ -114,7 +115,15 @@ public class FrameController extends JFrame {
 	}
 ////////////////////////////////////////////////////////////////////////////
 	public void AddListenersToBattlePanel() {
-		
+		battlePanel.getBackToMapBtn().addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				battlePanel.setVisible(false);
+				setToMapPanel();
+			}
+
+		});
 	}
 
 	public void AddListenersToCharacterPanel() {
