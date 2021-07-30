@@ -1,8 +1,10 @@
 package Main;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -113,6 +115,7 @@ public class FrameController extends JFrame {
 
 		MainPanel.setVisible(true);
 	}
+
 ////////////////////////////////////////////////////////////////////////////
 	public void AddListenersToBattlePanel() {
 		battlePanel.getBackToMapBtn().addActionListener(new ActionListener() {
@@ -180,12 +183,36 @@ public class FrameController extends JFrame {
 	}
 
 	public void AddListenersToStartPanel() {
-		startPanel.getToMapBtn().addActionListener(new ActionListener() {
+		startPanel.getNewGameLabel().addMouseListener(new MouseListener() {
 
 			@Override
-			public void actionPerformed(ActionEvent e) {
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
 				startPanel.setVisible(false);
 				setToMapPanel();
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				startPanel.getNewGameLabel().setForeground(Color.black);
+				startPanel.getNewGameLabel().setBackground(Color.white);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				startPanel.getNewGameLabel().setForeground(Color.white);
+				startPanel.getNewGameLabel().setBackground(Color.gray);
 			}
 
 		});

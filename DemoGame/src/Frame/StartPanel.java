@@ -1,10 +1,14 @@
 package Frame;
 
-import javax.swing.JButton;
+import java.awt.Color;
+import java.awt.Font;
+
+import javax.swing.JLabel;
+
 
 @SuppressWarnings("serial")
 public class StartPanel extends BasePanel {
-	JButton toMapBtn;
+	JLabel NewGameLbl;
 	
 	public StartPanel() {
 		super();
@@ -12,15 +16,19 @@ public class StartPanel extends BasePanel {
 
 	}
 	
-	public JButton getToMapBtn() {
-		return toMapBtn;
+	public JLabel getNewGameLabel() {
+		return NewGameLbl;
 	}
 	
 	private void initStartPanel() {
-		toMapBtn = new JButton("toMapBtn");
-		toMapBtn.setSize(200, 150);
-		toMapBtn.setLocation(250,250);
-		add(toMapBtn);
+		NewGameLbl = new JLabel("New Game");
+		NewGameLbl.setOpaque(true);
+		NewGameLbl.setBounds(500, 450, 200, 80);
+		NewGameLbl.setHorizontalAlignment(JLabel.CENTER);
+		NewGameLbl.setFont(new Font("Copperplate Gothic",Font.BOLD,30));
+		NewGameLbl.setForeground(Color.white);
+		NewGameLbl.setBackground(Color.gray);
+		add(NewGameLbl);
 	}
 	
 }
