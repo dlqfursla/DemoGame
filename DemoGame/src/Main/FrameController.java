@@ -127,6 +127,39 @@ public class FrameController extends JFrame {
 			}
 
 		});
+
+		battlePanel.getSettingsLbl().addMouseListener(new MouseListener() {
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				battlePanel.getSettingsLbl().setForeground(Color.black);
+				battlePanel.getSettingsLbl().setBackground(Color.white);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				battlePanel.getSettingsLbl().setForeground(Color.white);
+				battlePanel.getSettingsLbl().setBackground(Color.gray);
+			}
+		});
 	}
 
 	public void AddListenersToCharacterPanel() {
