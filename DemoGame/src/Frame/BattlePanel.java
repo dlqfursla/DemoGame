@@ -13,10 +13,10 @@ public class BattlePanel extends BasePanel {
 
 	JLabel SettingsLbl;
 
-	JPanel PlayerPanel;
-	JPanel[] EnemyPanel;
-	JPanel SkillsPanel;
-	JPanel ItemsPanel;
+	JPanel PlayerPnl;
+	JPanel[] EnemyPnl;
+	JPanel SkillsPnl;
+	JPanel ItemsPnl;
 
 	public BattlePanel() {
 		super();
@@ -32,26 +32,26 @@ public class BattlePanel extends BasePanel {
 	}
 
 	public JPanel getPlayerPanel() {
-		return PlayerPanel;
+		return PlayerPnl;
 	}
 
 	public JPanel getEnemyPanel(int i) {
-		return EnemyPanel[i];
+		return EnemyPnl[i];
 	}
 
 	public JPanel getSkillsPanel() {
-		return SkillsPanel;
+		return SkillsPnl;
 	}
 
 	public JPanel getItemsPanel() {
-		return ItemsPanel;
+		return ItemsPnl;
 	}
 
 	private void initBattlePanel() {
 		BackToMapBtn = new JButton("BackToMapBtn");
 		BackToMapBtn.setSize(200, 150);
 		BackToMapBtn.setLocation(650, 250);
-		BackToMapBtn.setVisible(false);
+		BackToMapBtn.setVisible(true);
 		add(BackToMapBtn);
 
 		SettingsLbl = new JLabel("Settings");
@@ -63,39 +63,39 @@ public class BattlePanel extends BasePanel {
 		SettingsLbl.setHorizontalAlignment(JLabel.CENTER);
 		add(SettingsLbl);
 
-		PlayerPanel = new JPanel();
-		PlayerPanel.setBounds(70, 200, 200, 270);
-		PlayerPanel.setFont(new Font("Copperplate Gothic", Font.BOLD, 30));
-		PlayerPanel.setOpaque(true);
-		PlayerPanel.setBackground(Color.GRAY);
-		PlayerPanel.setForeground(Color.white);
-		add(PlayerPanel);
+		PlayerPnl = new JPanel();
+		PlayerPnl.setBounds(70, 200, 200, 270);
+		PlayerPnl.setFont(new Font("Copperplate Gothic", Font.BOLD, 30));
+		PlayerPnl.setOpaque(true);
+		PlayerPnl.setBackground(Color.GRAY);
+		PlayerPnl.setForeground(Color.white);
+		add(PlayerPnl);
 
-		EnemyPanel = new JPanel[5];
+		EnemyPnl = new JPanel[5];
 		for (int i = 0; i < 5; i++) {
-			EnemyPanel[i] = new JPanel();
-			EnemyPanel[i].setBounds((int) (500 * (i * 0.2 + 1)), (int) (230 + 97 * Math.pow(-1, i + 1))+20, 165, 195);
-			EnemyPanel[i].setFont(new Font("Copperplate Gothic", Font.BOLD, 30));
-			EnemyPanel[i].setOpaque(true);
-			EnemyPanel[i].setBackground(new Color(100, 50 * i, 0));
-			EnemyPanel[i].setForeground(Color.white);
-			add(EnemyPanel[i]);
+			EnemyPnl[i] = new JPanel();
+			EnemyPnl[i].setBounds((int) (500 * (i * 0.2 + 1)), (int) (230 + 97 * Math.pow(-1, i + 1))+20, 165, 195);
+			EnemyPnl[i].setFont(new Font("Copperplate Gothic", Font.BOLD, 30));
+			EnemyPnl[i].setOpaque(true);
+			EnemyPnl[i].setBackground(new Color(100, 50 * i, 0));
+			EnemyPnl[i].setForeground(Color.white);
+			add(EnemyPnl[i]);
 		}
 		
-		SkillsPanel = new JPanel();
-		SkillsPanel.setBounds(0, 580, 1280, 100);
-		SkillsPanel.setFont(new Font("Copperplate Gothic", Font.BOLD, 30));
-		SkillsPanel.setOpaque(true);
-		SkillsPanel.setBackground(Color.GRAY);
-		SkillsPanel.setForeground(Color.white);
-		add(SkillsPanel);
+		SkillsPnl = new JPanel();
+		SkillsPnl.setBounds(0, 580, 1280, 100);
+		SkillsPnl.setFont(new Font("Copperplate Gothic", Font.BOLD, 30));
+		SkillsPnl.setOpaque(true);
+		SkillsPnl.setBackground(Color.GRAY);
+		SkillsPnl.setForeground(Color.white);
+		add(SkillsPnl);
 		
-		ItemsPanel = new JPanel();
-		ItemsPanel.setBounds(0, 0, 1280, 100);
-		ItemsPanel.setFont(new Font("Copperplate Gothic", Font.BOLD, 30));
-		ItemsPanel.setOpaque(true);
-		ItemsPanel.setBackground(Color.GRAY);
-		ItemsPanel.setForeground(Color.white);
-		add(ItemsPanel);
+		ItemsPnl = new JPanel();
+		ItemsPnl.setBounds(0, 0, 1280, 100);
+		ItemsPnl.setFont(new Font("Copperplate Gothic", Font.BOLD, 30));
+		ItemsPnl.setOpaque(true);
+		ItemsPnl.setBackground(Color.GRAY);
+		ItemsPnl.setForeground(Color.white);
+		add(ItemsPnl);
 	}
 }
