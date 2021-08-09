@@ -34,7 +34,8 @@ public class FrameController extends JFrame {
 		setLayout(null);
 		setSize(1280, 720);
 		setVisible(true);
-
+		setResizable(false);
+		
 		MainPanel = new JPanel();
 
 		battlePanel = new BattlePanel();
