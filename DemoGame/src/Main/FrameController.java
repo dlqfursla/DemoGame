@@ -20,6 +20,7 @@ public class FrameController extends JFrame {
 	BattlePanel battlePanel;
 	CharacterPanel characterPanel;
 	MapPanel mapPanel;
+	SaveAndLoadPanel saveandloadPanel;
 	StartPanel startPanel;
 	StatsPanel statsPanel;
 
@@ -40,12 +41,14 @@ public class FrameController extends JFrame {
 		battlePanel = new BattlePanel();
 		characterPanel = new CharacterPanel();
 		mapPanel = new MapPanel();
+		saveandloadPanel = new SaveAndLoadPanel();
 		startPanel = new StartPanel();
 		statsPanel = new StatsPanel();
 
 		AddListenersToBattlePanel();
 		AddListenersToCharacterPanel();
 		AddListenersToMapPanel();
+		AddListenersToSaveAndLoadPanel();
 		AddListenersToStartPanel();
 		AddListenersToStatsPanel();
 
@@ -84,6 +87,18 @@ public class FrameController extends JFrame {
 		setTitle("Map");
 
 		MainPanel = mapPanel;
+
+		MainPanel.setVisible(false);
+
+		add(MainPanel);
+
+		MainPanel.setVisible(true);
+	}
+
+	public void setToSaveAndLoadPanel() {
+		setTitle("Save and Load");
+
+		MainPanel = saveandloadPanel;
 
 		MainPanel.setVisible(false);
 
@@ -182,6 +197,138 @@ public class FrameController extends JFrame {
 
 	}
 
+	public void AddListenersToSaveAndLoadPanel() {
+		saveandloadPanel.getSlot1().addMouseListener(new MouseListener() {
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				saveandloadPanel.getSlot1().setBackground(Color.white);
+				saveandloadPanel.getSlot1().setForeground(Color.black);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				saveandloadPanel.getSlot1().setBackground(Color.gray);
+				saveandloadPanel.getSlot1().setForeground(Color.white);
+			}});
+		
+		saveandloadPanel.getSlot2().addMouseListener(new MouseListener() {
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				saveandloadPanel.getSlot2().setBackground(Color.white);
+				saveandloadPanel.getSlot2().setForeground(Color.black);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				saveandloadPanel.getSlot2().setBackground(Color.gray);
+				saveandloadPanel.getSlot2().setForeground(Color.white);
+			}});
+		
+		saveandloadPanel.getSlot3().addMouseListener(new MouseListener() {
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				saveandloadPanel.getSlot3().setBackground(Color.white);
+				saveandloadPanel.getSlot3().setForeground(Color.black);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				saveandloadPanel.getSlot3().setBackground(Color.gray);
+				saveandloadPanel.getSlot3().setForeground(Color.white);
+			}});
+		
+		
+		saveandloadPanel.getBackToStart().addMouseListener(new MouseListener() {
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				saveandloadPanel.setVisible(false);
+				setToStartPanel();
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				saveandloadPanel.getBackToStart().setForeground(Color.black);
+				saveandloadPanel.getBackToStart().setBackground(Color.white);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				saveandloadPanel.getBackToStart().setForeground(Color.white);
+				saveandloadPanel.getBackToStart().setBackground(Color.gray);
+			}
+		});
+	}
+
 	public void AddListenersToStartPanel() {
 		startPanel.getNewGameLabel().addMouseListener(new MouseListener() {
 
@@ -213,6 +360,72 @@ public class FrameController extends JFrame {
 			public void mouseExited(MouseEvent e) {
 				startPanel.getNewGameLabel().setForeground(Color.white);
 				startPanel.getNewGameLabel().setBackground(Color.gray);
+			}
+
+		});
+		startPanel.getContinueLabel().addMouseListener(new MouseListener() {
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				startPanel.setVisible(false);
+				setToSaveAndLoadPanel();
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				startPanel.getContinueLabel().setForeground(Color.black);
+				startPanel.getContinueLabel().setBackground(Color.white);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				startPanel.getContinueLabel().setForeground(Color.white);
+				startPanel.getContinueLabel().setBackground(Color.gray);
+			}
+
+		});
+		startPanel.getEndGameLabel().addMouseListener(new MouseListener() {
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				startPanel.setVisible(false);
+				dispose();
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				startPanel.getEndGameLabel().setForeground(Color.black);
+				startPanel.getEndGameLabel().setBackground(Color.white);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				startPanel.getEndGameLabel().setForeground(Color.white);
+				startPanel.getEndGameLabel().setBackground(Color.gray);
 			}
 
 		});
