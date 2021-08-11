@@ -125,7 +125,7 @@ public class CharacterPanel extends BasePanel {
 			ExpeditionStatsPnl.add(ExpeditionStatsLbl[i]);
 		}
 		
-		////
+		/////////////////////////////////////////////////////////////////////////////////////////////////////
 		
 		DefencePnl = new JPanel();
 		DefencePnl.setLayout(null);
@@ -203,7 +203,6 @@ public class CharacterPanel extends BasePanel {
 		SkillsLbl = new JLabel[32];
 		for (int i = 0; i < 32; i++) {
 			SkillsLbl[i] = new JLabel("Label"+i);
-			//SkillsLbl[i].setBounds(340, 0, 600, 50);
 			SkillsLbl[i].setFont(new Font("Copperplate Gothic", Font.BOLD, 30));
 			SkillsLbl[i].setHorizontalAlignment(JLabel.CENTER);
 			SkillsLbl[i].setOpaque(true);
@@ -211,6 +210,8 @@ public class CharacterPanel extends BasePanel {
 			SkillsLbl[i].setForeground(Color.GREEN);
 			SkillsPnl.add(SkillsLbl[i]);
 		}
+
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		EnDExchangeLbl = new JLabel("E&D Exchange");
 		EnDExchangeLbl.setBounds(480, 600, 150, 50);
