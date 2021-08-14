@@ -8,7 +8,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-@SuppressWarnings("serial")
 public class CharacterPanel extends BasePanel {
 	JButton BackToMapBtn;
 	JButton ToBattleBtn;
@@ -163,13 +162,6 @@ public class CharacterPanel extends BasePanel {
 			DefenceSkillsPnl.add(DefenceSkillsLbl[i]);
 		}
 		
-		DefenceStatsPnl  = new JPanel();
-		DefenceStatsPnl.setLayout(new GridLayout(2,4));
-		DefenceStatsPnl.setBounds(200, 20, 400, 160);
-		DefenceStatsPnl.setOpaque(true);
-		DefenceStatsPnl.setBackground(Color.GREEN);
-		DefenceStatsPnl.setForeground(Color.white);
-		DefencePnl.add(DefenceStatsPnl);
 		
 		DefenceStatsPnl = new JPanel();
 		DefenceStatsPnl.setLayout(new GridLayout(2,4));

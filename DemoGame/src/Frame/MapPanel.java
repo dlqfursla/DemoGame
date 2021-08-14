@@ -2,7 +2,6 @@ package Frame;
 
 import javax.swing.JButton;
 
-@SuppressWarnings("serial")
 public class MapPanel extends BasePanel {
 	JButton toCharacterBtn;
 	JButton toStartBtn;

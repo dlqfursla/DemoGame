@@ -6,59 +6,59 @@ import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-@SuppressWarnings("serial")
 public class SaveAndLoadPanel extends BasePanel  {
-	JPanel Slot1;
-	JLabel Slot1_Name;
-	JLabel Slot1_Image;
-	
-	JPanel Slot2;
-	JLabel Slot2_Name;
-	JLabel Slot2_Image;
-	
-	JPanel Slot3;
-	JLabel Slot3_Name;
-	JLabel Slot3_Image;
-	
+	JPanel[] Slot;
+	JLabel[] SlotName;
+	JLabel[] SlotImage;
+
 	JLabel BackToStart;
 	public SaveAndLoadPanel() {
 		super();
 		initSaveAndLoadPanel();
 	}
-	public JPanel getSlot1() {
-		return Slot1;
+	public JPanel[] getSlot() {
+		return Slot;
 	}
-	public JPanel getSlot2() {
-		return Slot2;
+	public JPanel getSlot(int i) {
+		return Slot[i];
 	}
-	public JPanel getSlot3() {
-		return Slot3;
-	}
+
 	public JLabel getBackToStart() {
 		return BackToStart;
 	}
 	
 	private void initSaveAndLoadPanel() {
-		Slot1 = new JPanel();
-		Slot1.setBounds(50, 50, 800, 150);
-		Slot1.setVisible(true);
-		Slot1.setOpaque(true);
-		Slot1.setBackground(Color.gray);
-		add(Slot1);
-		
-		Slot2 = new JPanel();
-		Slot2.setBounds(50, 250, 800, 150);
-		Slot2.setVisible(true);
-		Slot2.setOpaque(true);
-		Slot2.setBackground(Color.gray);
-		add(Slot2);
-		
-		Slot3 = new JPanel();
-		Slot3.setBounds(50, 450, 800, 150);
-		Slot3.setVisible(true);
-		Slot3.setOpaque(true);
-		Slot3.setBackground(Color.gray);
-		add(Slot3);
+		Slot = new JPanel[3];
+		SlotName = new JLabel[3];
+		SlotImage = new JLabel[3];
+		for(int i =0; i<3; i++){		
+			Slot[i] = new JPanel();
+			Slot[i].setLayout(null);
+			Slot[i].setBounds(50, 50+200*i, 800, 150);
+			Slot[i].setVisible(true);
+			Slot[i].setOpaque(true);
+			Slot[i].setBackground(Color.gray);
+			add(Slot[i]);
+
+			SlotName[i] = new JLabel("SlotName"+i);
+			SlotName[i].setOpaque(true);
+			SlotName[i].setBounds(80, 30, 200, 90);
+			SlotName[i].setHorizontalAlignment(JLabel.CENTER);
+			SlotName[i].setFont(new Font("Copperplate Gothic",Font.BOLD,30));
+			SlotName[i].setForeground(Color.white);
+			SlotName[i].setBackground(Color.RED);
+			Slot[i].add(SlotName[i]);
+
+			SlotImage[i] = new JLabel("SlotImage"+i);
+			SlotImage[i].setOpaque(true);
+			SlotImage[i].setBounds(330, 30, 400, 90);
+			SlotImage[i].setHorizontalAlignment(JLabel.CENTER);
+			SlotImage[i].setFont(new Font("Copperplate Gothic",Font.BOLD,30));
+			SlotImage[i].setForeground(Color.white);
+			SlotImage[i].setBackground(Color.GREEN);
+			Slot[i].add(SlotImage[i]);
+
+		}
 		
 		BackToStart = new JLabel("Back to Main");
 		BackToStart.setOpaque(true);

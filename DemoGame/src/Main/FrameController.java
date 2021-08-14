@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 
 import Frame.*;
 
-@SuppressWarnings("serial")
+
 public class FrameController extends JFrame {
 	DataController data;
 
@@ -19,6 +19,7 @@ public class FrameController extends JFrame {
 
 	BattlePanel battlePanel;
 	CharacterPanel characterPanel;
+	CharacterSelectPanel characterselectPanel;
 	MapPanel mapPanel;
 	SaveAndLoadPanel saveandloadPanel; 
 	StartPanel startPanel;
@@ -41,6 +42,7 @@ public class FrameController extends JFrame {
 
 		battlePanel = new BattlePanel();
 		characterPanel = new CharacterPanel();
+		characterselectPanel = new CharacterSelectPanel();
 		mapPanel = new MapPanel();
 		saveandloadPanel = new SaveAndLoadPanel(); 
 		startPanel = new StartPanel();
@@ -48,6 +50,7 @@ public class FrameController extends JFrame {
 
 		AddListenersToBattlePanel();
 		AddListenersToCharacterPanel();
+		AddListenersToCharacterSelectPanel();
 		AddListenersToMapPanel();
 		AddListenersToSaveAndLoadPanel(); 
 		AddListenersToStartPanel();
@@ -56,8 +59,10 @@ public class FrameController extends JFrame {
 	}
 
 	public void Start() {
-		System.out.println("Start");
-		setToStartPanel();
+		setToCharacterSelectPanel();
+		//setToStartPanel();
+		//setToBattlePanel();
+		//setToCharacterPanel();
 	}
 
 	public void setToBattlePanel() {
@@ -76,6 +81,18 @@ public class FrameController extends JFrame {
 		setTitle("Character");
 
 		MainPanel = characterPanel;
+
+		MainPanel.setVisible(false);
+
+		add(MainPanel);
+
+		MainPanel.setVisible(true);
+	}
+
+	public void setToCharacterSelectPanel() {
+		setTitle("CharacterSelectPanel");
+
+		MainPanel = characterselectPanel;
 
 		MainPanel.setVisible(false);
 
@@ -148,19 +165,19 @@ public class FrameController extends JFrame {
 
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
+
 
 			}
 
 			@Override
 			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
+
 
 			}
 
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
+
 
 			}
 
@@ -198,7 +215,9 @@ public class FrameController extends JFrame {
 
 		});
 	}
+	public void AddListenersToCharacterSelectPanel() {
 
+	}
 	public void AddListenersToMapPanel() {
 
 		mapPanel.getToCharacterBtn().addActionListener(new ActionListener() {
@@ -232,109 +251,46 @@ public class FrameController extends JFrame {
 	}
 
 	public void AddListenersToSaveAndLoadPanel() { 
-		saveandloadPanel.getSlot1().addMouseListener(new MouseListener() { 
+		for(int i =0; i<3; i++){
+			JPanel slot = saveandloadPanel.getSlot(i);
+			slot.addMouseListener(new MouseListener() { 
  
 			@Override 
 			public void mouseClicked(MouseEvent e) { 
-				// TODO Auto-generated method stub 
+
 				 
 			} 
  
 			@Override 
 			public void mousePressed(MouseEvent e) { 
-				// TODO Auto-generated method stub 
+
 				 
 			} 
  
 			@Override 
 			public void mouseReleased(MouseEvent e) { 
-				// TODO Auto-generated method stub 
-				 
+
 			} 
  
 			@Override 
 			public void mouseEntered(MouseEvent e) { 
-				saveandloadPanel.getSlot1().setBackground(Color.white); 
-				saveandloadPanel.getSlot1().setForeground(Color.black); 
+				slot.setBackground(Color.white); 
+				slot.setForeground(Color.black); 
 			} 
  
 			@Override 
 			public void mouseExited(MouseEvent e) { 
-				saveandloadPanel.getSlot1().setBackground(Color.gray); 
-				saveandloadPanel.getSlot1().setForeground(Color.white); 
+				slot.setBackground(Color.gray); 
+				slot.setForeground(Color.white); 
 			}}); 
-		 
-		saveandloadPanel.getSlot2().addMouseListener(new MouseListener() { 
- 
-			@Override 
-			public void mouseClicked(MouseEvent e) { 
-				// TODO Auto-generated method stub 
-				 
-			} 
- 
-			@Override 
-			public void mousePressed(MouseEvent e) { 
-				// TODO Auto-generated method stub 
-				 
-			} 
- 
-			@Override 
-			public void mouseReleased(MouseEvent e) { 
-				// TODO Auto-generated method stub 
-				 
-			} 
- 
-			@Override 
-			public void mouseEntered(MouseEvent e) { 
-				saveandloadPanel.getSlot2().setBackground(Color.white); 
-				saveandloadPanel.getSlot2().setForeground(Color.black); 
-			} 
- 
-			@Override 
-			public void mouseExited(MouseEvent e) { 
-				saveandloadPanel.getSlot2().setBackground(Color.gray); 
-				saveandloadPanel.getSlot2().setForeground(Color.white); 
-			}}); 
-		 
-		saveandloadPanel.getSlot3().addMouseListener(new MouseListener() { 
- 
-			@Override 
-			public void mouseClicked(MouseEvent e) { 
-				// TODO Auto-generated method stub 
-				 
-			} 
- 
-			@Override 
-			public void mousePressed(MouseEvent e) { 
-				// TODO Auto-generated method stub 
-				 
-			} 
- 
-			@Override 
-			public void mouseReleased(MouseEvent e) { 
-				// TODO Auto-generated method stub 
-				 
-			} 
- 
-			@Override 
-			public void mouseEntered(MouseEvent e) { 
-				saveandloadPanel.getSlot3().setBackground(Color.white); 
-				saveandloadPanel.getSlot3().setForeground(Color.black); 
-			} 
- 
-			@Override 
-			public void mouseExited(MouseEvent e) { 
-				saveandloadPanel.getSlot3().setBackground(Color.gray); 
-				saveandloadPanel.getSlot3().setForeground(Color.white); 
-			}}); 
-		 
+		}
+		
 		 
 		saveandloadPanel.getBackToStart().addMouseListener(new MouseListener() { 
  
 			@Override 
 			public void mouseClicked(MouseEvent e) { 
-				// TODO Auto-generated method stub 
- 
+
 			} 
  
 			@Override 
@@ -345,8 +301,7 @@ public class FrameController extends JFrame {
  
 			@Override 
 			public void mouseReleased(MouseEvent e) { 
-				// TODO Auto-generated method stub 
- 
+
 			} 
  
 			@Override 
@@ -368,19 +323,17 @@ public class FrameController extends JFrame {
 
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
 
 			}
 
 			@Override
 			public void mousePressed(MouseEvent e) {
 				startPanel.setVisible(false);
-				setToMapPanel();
+				setToCharacterSelectPanel();
 			}
 
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
 
 			}
 
@@ -401,8 +354,7 @@ public class FrameController extends JFrame {
 			 
 			@Override 
 			public void mouseClicked(MouseEvent e) { 
-				// TODO Auto-generated method stub 
- 
+
 			} 
  
 			@Override 
@@ -413,8 +365,7 @@ public class FrameController extends JFrame {
  
 			@Override 
 			public void mouseReleased(MouseEvent e) { 
-				// TODO Auto-generated method stub 
- 
+
 			} 
  
 			@Override 
@@ -434,8 +385,7 @@ public class FrameController extends JFrame {
 			 
 			@Override 
 			public void mouseClicked(MouseEvent e) { 
-				// TODO Auto-generated method stub 
- 
+
 			} 
  
 			@Override 
@@ -446,8 +396,7 @@ public class FrameController extends JFrame {
  
 			@Override 
 			public void mouseReleased(MouseEvent e) { 
-				// TODO Auto-generated method stub 
- 
+
 			} 
  
 			@Override 
@@ -466,14 +415,7 @@ public class FrameController extends JFrame {
 	}
 
 	public void AddListenersToStatsPanel() {
-		statsPanel.getChangeStatsBtn().addActionListener(new ActionListener() {
 
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				statsPanel.setStats(5);
-			}
-
-		});
 		statsPanel.getBackToMapBtn().addActionListener(new ActionListener() {
 
 			@Override

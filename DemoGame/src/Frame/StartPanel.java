@@ -5,8 +5,6 @@ import java.awt.Font;
 
 import javax.swing.JLabel;
 
-
-@SuppressWarnings("serial")
 public class StartPanel extends BasePanel {
 	JLabel TitleLbl; 
 	 
