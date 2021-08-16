@@ -7,30 +7,31 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import Frame.*;
 
 
 public class FrameController extends JFrame {
-	DataController data;
+	private DataController data;
 
-	JPanel MainPanel;
+	private JPanel MainPanel;
 
-	BattlePanel battlePanel;
-	CharacterPanel characterPanel;
-	CharacterSelectPanel characterselectPanel;
-	MapPanel mapPanel;
-	SaveAndLoadPanel saveandloadPanel; 
-	StartPanel startPanel;
-	StatsPanel statsPanel;
+	private BattlePanel battlePanel;
+	private CharacterPanel characterPanel;
+	private CharacterSelectPanel characterselectPanel;
+	private MapPanel mapPanel;
+	private SaveAndLoadPanel saveandloadPanel; 
+	private StartPanel startPanel;
+	private StatsPanel statsPanel;
+
 
 	public FrameController() {
-
-		init();
+		initFrameController();
 	}
 
-	private void init() {
+	private void initFrameController() {
 		data = new DataController();
 
 		setLayout(null);
@@ -59,11 +60,14 @@ public class FrameController extends JFrame {
 	}
 
 	public void Start() {
-		setToCharacterSelectPanel();
-		//setToStartPanel();
+		//setToCharacterSelectPanel();
+		setToStartPanel();
 		//setToBattlePanel();
 		//setToCharacterPanel();
 	}
+
+
+	///////////////////////////////////////////////////////////////////////////////////////
 
 	public void setToBattlePanel() {
 		setTitle("Battle");
@@ -148,8 +152,11 @@ public class FrameController extends JFrame {
 
 		MainPanel.setVisible(true);
 	}
+////////////////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////
+
+
+//////////////BattlePanel/////////////////////////////////////////////////////////////
 	public void AddListenersToBattlePanel() {
 		battlePanel.getBackToMapBtn().addActionListener(new ActionListener() {
 
@@ -195,6 +202,8 @@ public class FrameController extends JFrame {
 		});
 	}
 
+	//////////CharacterPanel///////////////////////////////////////////////////////
+
 	public void AddListenersToCharacterPanel() {
 		characterPanel.getBackToMapBtn().addActionListener(new ActionListener() {
 
@@ -215,9 +224,90 @@ public class FrameController extends JFrame {
 
 		});
 	}
-	public void AddListenersToCharacterSelectPanel() {
+	
+	//////////CharacterSelectPanel/////////////////////////////////////////////
 
+	public void AddListenersToCharacterSelectPanel() {
+		for(int i=0; i<12; i++){
+			JLabel NameLbl = characterselectPanel.getCharacterNameLbl(i);
+			JLabel PortraitLbl = characterselectPanel.getCharacterPortraitLbl(i);
+
+			NameLbl.addMouseListener(new MouseListener(){
+
+				@Override
+				public void mouseClicked(MouseEvent e) {
+				}
+
+				@Override
+				public void mousePressed(MouseEvent e) {
+
+				}
+
+				@Override
+				public void mouseReleased(MouseEvent e) {
+
+				}
+
+				@Override
+				public void mouseEntered(MouseEvent e) {
+					NameLbl.setBackground(Color.gray);
+					NameLbl.setForeground(Color.yellow);
+
+					PortraitLbl.setBackground(Color.gray);
+					PortraitLbl.setForeground(Color.yellow);
+				}
+
+				@Override
+				public void mouseExited(MouseEvent e) {
+					NameLbl.setBackground(Color.GREEN);
+					NameLbl.setForeground(Color.white);
+
+					PortraitLbl.setBackground(Color.GREEN);
+					PortraitLbl.setForeground(Color.white);
+				}});
+
+				PortraitLbl.addMouseListener(new MouseListener() {
+
+					@Override
+					public void mouseClicked(MouseEvent e) {
+						
+					}
+
+					@Override
+					public void mousePressed(MouseEvent e) {
+						
+					}
+
+					@Override
+					public void mouseReleased(MouseEvent e) {
+
+					}
+
+					@Override
+					public void mouseEntered(MouseEvent e) {
+						NameLbl.setBackground(Color.gray);
+						NameLbl.setForeground(Color.yellow);
+	
+						PortraitLbl.setBackground(Color.gray);
+						PortraitLbl.setForeground(Color.yellow);
+						
+					}
+
+					@Override
+					public void mouseExited(MouseEvent e) {
+						NameLbl.setBackground(Color.GREEN);
+						NameLbl.setForeground(Color.white);
+
+						PortraitLbl.setBackground(Color.GREEN);
+						PortraitLbl.setForeground(Color.white);
+					}});
+		
+		}
+		
 	}
+
+
+
 	public void AddListenersToMapPanel() {
 
 		mapPanel.getToCharacterBtn().addActionListener(new ActionListener() {
@@ -249,6 +339,8 @@ public class FrameController extends JFrame {
 		});
 
 	}
+
+	//////////SaveAndLoadPanel////////////////////////////////////////////////////
 
 	public void AddListenersToSaveAndLoadPanel() { 
 		for(int i =0; i<3; i++){
@@ -317,6 +409,8 @@ public class FrameController extends JFrame {
 			} 
 		}); 
 	} 
+
+	//////////StartPanel/////////////////////////////////////////////////////////////
 	
 	public void AddListenersToStartPanel() {
 		startPanel.getNewGameLabel().addMouseListener(new MouseListener() {
@@ -329,6 +423,7 @@ public class FrameController extends JFrame {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				startPanel.setVisible(false);
+				CharacterSelectPanel.setDataForCharacterList(data);
 				setToCharacterSelectPanel();
 			}
 
@@ -414,6 +509,8 @@ public class FrameController extends JFrame {
 		}); 
 	}
 
+	//////////StatsPanel/////////////////////////////////////////////////////////////
+
 	public void AddListenersToStatsPanel() {
 
 		statsPanel.getBackToMapBtn().addActionListener(new ActionListener() {
@@ -426,4 +523,8 @@ public class FrameController extends JFrame {
 
 		});
 	}
+
+
+
 }
+

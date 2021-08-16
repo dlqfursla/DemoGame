@@ -3,9 +3,9 @@ package Frame;
 import javax.swing.JButton;
 
 public class MapPanel extends BasePanel {
-	JButton toCharacterBtn;
-	JButton toStartBtn;
-	JButton toStatsBtn;
+	private JButton toCharacterBtn;
+	private JButton toStartBtn;
+	private JButton toStatsBtn;
 
 	public MapPanel() {
 		super();

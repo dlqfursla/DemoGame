@@ -6,11 +6,11 @@ import java.awt.Font;
 import javax.swing.JLabel;
 
 public class StartPanel extends BasePanel {
-	JLabel TitleLbl; 
+	private JLabel TitleLbl; 
 	 
-	JLabel NewGameLbl; 
-	JLabel ContinueLbl; 
-	JLabel EndGameLbl; 
+	private JLabel NewGameLbl; 
+	private JLabel ContinueLbl; 
+	private JLabel EndGameLbl; 
 	
 	public StartPanel() {
 		super();

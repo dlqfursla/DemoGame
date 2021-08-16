@@ -9,30 +9,30 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class CharacterPanel extends BasePanel {
-	JButton BackToMapBtn;
-	JButton ToBattleBtn;
+	private JButton BackToMapBtn;
+	private JButton ToBattleBtn;
 
-	JLabel AlarmLbl;
+	private JLabel AlarmLbl;
 
-	JPanel ExpeditionPnl;
-	JLabel ExpeditionCharacterLbl;
-	JPanel ExpeditionSkillsPnl;
-	JLabel[] ExpeditionSkillsLbl;
-	JPanel ExpeditionStatsPnl;
-	JLabel[] ExpeditionStatsLbl;
+	private JPanel ExpeditionPnl;
+	private JLabel ExpeditionCharacterLbl;
+	private JPanel ExpeditionSkillsPnl;
+	private JLabel[] ExpeditionSkillsLbl;
+	private JPanel ExpeditionStatsPnl;
+	private JLabel[] ExpeditionStatsLbl;
 
-	JPanel DefencePnl;
-	JLabel DefenceCharacterLbl;
-	JPanel DefenceSkillsPnl;
-	JLabel[] DefenceSkillsLbl;
-	JPanel DefenceStatsPnl;
-	JLabel[] DefenceStatsLbl;
+	private JPanel DefencePnl;
+	private JLabel DefenceCharacterLbl;
+	private JPanel DefenceSkillsPnl;
+	private JLabel[] DefenceSkillsLbl;
+	private JPanel DefenceStatsPnl;
+	private JLabel[] DefenceStatsLbl;
 
-	JPanel SkillsPnl;
-	JLabel[] SkillsLbl;
+	private JPanel SkillsPnl;
+	private JLabel[] SkillsLbl;
 
-	JLabel EnDExchangeLbl;
-	JLabel SkillExchangeLbl;
+	private JLabel EnDExchangeLbl;
+	private JLabel SkillExchangeLbl;
 
 	public CharacterPanel() {
 		super();

@@ -7,11 +7,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class SaveAndLoadPanel extends BasePanel  {
-	JPanel[] Slot;
-	JLabel[] SlotName;
-	JLabel[] SlotImage;
+	private JPanel[] Slot;
+	private JLabel[] SlotName;
+	private JLabel[] SlotImage;
 
-	JLabel BackToStart;
+	private JLabel BackToStart;
 	public SaveAndLoadPanel() {
 		super();
 		initSaveAndLoadPanel();

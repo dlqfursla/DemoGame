@@ -10,38 +10,38 @@ import javax.swing.JPanel;
 
 
 public class BattlePanel extends BasePanel {
-	JButton BackToMapBtn;
+	private JButton BackToMapBtn;
 
-	JLabel SettingsLbl;
+	private JLabel SettingsLbl;
 
-	JPanel PlayerPnl;
-	JPanel[] EnemyPnl;
+	private JPanel PlayerPnl;
+	private JPanel[] EnemyPnl;
 
-	JPanel SkillsPnl;
-	JLabel[] SkillsLbl;
+	private JPanel SkillsPnl;
+	private JLabel[] SkillsLbl;
 
-	JPanel ItemsPnl;
-	JLabel ItemTitleLbl;
-	JLabel[] ItemsLbl;
+	private JPanel ItemsPnl;
+	private JLabel ItemTitleLbl;
+	private JLabel[] ItemsLbl;
 
-	JLabel[] NameLbl;
+	private JLabel[] NameLbl;
 
-	JLabel[] CharacterPortraitLbl;
+	private JLabel[] CharacterPortraitLbl;
 
-	JPanel[] BottomPnl;
+	private JPanel[] BottomPnl;
 
-	JPanel[] HPPnl;
-	JLabel[] MaxHPLbl;
-	JLabel[] HPLbl;
+	private JPanel[] HPPnl;
+	private JLabel[] MaxHPLbl;
+	private JLabel[] HPLbl;
 
-	JLabel StaminaLbl;
+	private JLabel StaminaLbl;
 
-	JPanel[] debuffPnl;
-	JLabel[] stunLbl;
-	JLabel[] WeakenLbl;
-	JLabel[] SlowLbl;
+	private JPanel[] debuffPnl;
+	private JLabel[] stunLbl;
+	private JLabel[] WeakenLbl;
+	private JLabel[] SlowLbl;
 
-	JLabel[] NextActionLbl;
+	private JLabel[] NextActionLbl;
 	
 	public BattlePanel() {
 		super();

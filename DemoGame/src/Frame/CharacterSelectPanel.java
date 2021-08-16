@@ -3,17 +3,23 @@ package Frame;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
-
+import java.util.ArrayList;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class CharacterSelectPanel extends BasePanel {
-    JPanel ListPnl;
+import Main.DataController;
+import Data.Character;
 
-    JPanel[] CharacterPnl;
-    JLabel[] CharacterNameLbl;
-    JLabel[] CharacterPortraitLbl;
+public class CharacterSelectPanel extends BasePanel {
+    private JPanel ListPnl;
+
+    private JLabel TitleLbl;
+    private JLabel BacktoStartLbl;
+
+    private JPanel[] CharacterPnl;
+    private static JLabel[] CharacterNameLbl;
+    private static JLabel[] CharacterPortraitLbl;
 
     public CharacterSelectPanel() {
         super();
@@ -22,7 +28,7 @@ public class CharacterSelectPanel extends BasePanel {
     private void initCharacterSelectPanel() {
         ListPnl = new JPanel();
         ListPnl.setLayout(null);
-		ListPnl.setBounds(50, 50, 960, 560);
+		ListPnl.setBounds(153, 20, 960, 650);
 		ListPnl.setOpaque(true);
 		ListPnl.setBackground(Color.YELLOW);
 		ListPnl.setForeground(Color.white);
@@ -35,14 +41,14 @@ public class CharacterSelectPanel extends BasePanel {
         for(int i=0; i<12; i++) {
             CharacterPnl[i] = new JPanel();
             CharacterPnl[i].setLayout(new GridLayout(1,2));
-            CharacterPnl[i].setBounds(50+225*i, 30+100*i, 225, 100);
+            CharacterPnl[i].setBounds(25+230*(i%4), 180+150*(i/4), 220, 100);
             CharacterPnl[i].setOpaque(true);
             CharacterPnl[i].setBackground(Color.ORANGE);
             CharacterPnl[i].setForeground(Color.white);
             ListPnl.add(CharacterPnl[i]);
-
+            
             CharacterNameLbl[i] = new JLabel("CharacterNameLbl"+i);
-            CharacterNameLbl[i].setSize(100,100);
+            CharacterNameLbl[i].setSize(110,100);
             CharacterNameLbl[i].setFont(new Font("Copperplate Gothic", Font.BOLD, 10));
             CharacterNameLbl[i].setHorizontalAlignment(JLabel.CENTER);
             CharacterNameLbl[i].setOpaque(true);
@@ -51,7 +57,7 @@ public class CharacterSelectPanel extends BasePanel {
             CharacterPnl[i].add(CharacterNameLbl[i]);
 
             CharacterPortraitLbl[i] = new JLabel("CharacterPortraitLbl"+i);
-            CharacterPortraitLbl[i].setSize(100,100);
+            CharacterPortraitLbl[i].setSize(110,100);
             CharacterPortraitLbl[i].setFont(new Font("Copperplate Gothic", Font.BOLD, 10));
             CharacterPortraitLbl[i].setHorizontalAlignment(JLabel.CENTER);
             CharacterPortraitLbl[i].setOpaque(true);
@@ -59,6 +65,52 @@ public class CharacterSelectPanel extends BasePanel {
             CharacterPortraitLbl[i].setForeground(Color.white);
             CharacterPnl[i].add(CharacterPortraitLbl[i]);
         }
+
+        TitleLbl = new JLabel("Choose 2 Characters");
+        TitleLbl.setBounds(300,20, 360, 100);
+        TitleLbl.setFont(new Font("Copperplate Gothic", Font.BOLD, 30));
+        TitleLbl.setHorizontalAlignment(JLabel.CENTER);
+        TitleLbl.setOpaque(true);
+        TitleLbl.setBackground(Color.RED);
+        TitleLbl.setForeground(Color.white);
+        ListPnl.add(TitleLbl);
+
+        BacktoStartLbl = new JLabel("Back");
+        BacktoStartLbl.setBounds(880 ,20, 60, 30);
+        BacktoStartLbl.setFont(new Font("Copperplate Gothic", Font.BOLD, 10));
+        BacktoStartLbl.setHorizontalAlignment(JLabel.CENTER);
+        BacktoStartLbl.setOpaque(true);
+        BacktoStartLbl.setBackground(Color.BLUE);
+        BacktoStartLbl.setForeground(Color.white);
+        ListPnl.add(BacktoStartLbl);
+
     }
 
+    public JPanel getCharacterPnl(int i) {
+        return CharacterPnl[i];
+    }
+
+    public JLabel getCharacterNameLbl(int i) {
+        return CharacterNameLbl[i];
+    }
+    public JLabel getCharacterPortraitLbl(int i){
+        return CharacterPortraitLbl[i];
+    }
+
+    public static void setDataForCharacterList(DataController data) {
+        ArrayList<Character> List = data.getcharacterData().getCharacterList();
+
+        for(int i = 0; i<12; i++) {
+            if(i<List.size())
+            {
+                CharacterNameLbl[i].setText(List.get(i).getName());
+                CharacterPortraitLbl[i].setText(List.get(i).getName()+"`s Portrait");
+            }
+            else
+            {
+                CharacterNameLbl[i].setText("N/A");
+                CharacterPortraitLbl[i].setText("N/A");
+            }
+        }
+    }
 }
