@@ -228,6 +228,36 @@ public class FrameController extends JFrame {
 	//////////CharacterSelectPanel/////////////////////////////////////////////
 
 	public void AddListenersToCharacterSelectPanel() {
+		characterselectPanel.getBackLabel().addMouseListener(new MouseListener() {
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				characterselectPanel.setVisible(false);
+				setToStartPanel();
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				characterselectPanel.getBackLabel().setBackground(Color.YELLOW);
+				characterselectPanel.getBackLabel().setForeground(Color.black);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				characterselectPanel.getBackLabel().setBackground(Color.BLUE);
+				characterselectPanel.getBackLabel().setForeground(Color.white);
+			}});
+
 		for(int i=0; i<12; i++){
 			JLabel NameLbl = characterselectPanel.getCharacterNameLbl(i);
 			JLabel PortraitLbl = characterselectPanel.getCharacterPortraitLbl(i);
@@ -306,6 +336,7 @@ public class FrameController extends JFrame {
 		
 	}
 
+	//////////MapPanel//////////////////////////////////////////////////////
 
 
 	public void AddListenersToMapPanel() {

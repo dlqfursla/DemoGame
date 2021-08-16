@@ -96,7 +96,9 @@ public class CharacterSelectPanel extends BasePanel {
     public JLabel getCharacterPortraitLbl(int i){
         return CharacterPortraitLbl[i];
     }
-
+    public JLabel getBackLabel() {
+        return BacktoStartLbl;
+    }
     public static void setDataForCharacterList(DataController data) {
         ArrayList<Character> List = data.getcharacterData().getCharacterList();
 
