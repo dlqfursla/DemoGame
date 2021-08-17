@@ -61,9 +61,10 @@ public class FrameController extends JFrame {
 
 	public void Start() {
 		//setToCharacterSelectPanel();
-		//setToStartPanel();
-		setToBattlePanel();
+		setToStartPanel();
+		//setToBattlePanel();
 		//setToCharacterPanel();
+		//setToMapPanel();
 	}
 
 
@@ -228,6 +229,8 @@ public class FrameController extends JFrame {
 	//////////CharacterSelectPanel/////////////////////////////////////////////
 
 	public void AddListenersToCharacterSelectPanel() {
+
+		//backLabel
 		characterselectPanel.getBackLabel().addMouseListener(new MouseListener() {
 
 			@Override
@@ -258,6 +261,9 @@ public class FrameController extends JFrame {
 				characterselectPanel.getBackLabel().setForeground(Color.white);
 			}});
 
+
+		//CharacterNameLbl
+		//CharacterPortrait
 		for(int i=0; i<12; i++){
 			JLabel NameLbl = characterselectPanel.getCharacterNameLbl(i);
 			JLabel PortraitLbl = characterselectPanel.getCharacterPortraitLbl(i);
@@ -270,7 +276,26 @@ public class FrameController extends JFrame {
 
 				@Override
 				public void mousePressed(MouseEvent e) {
-
+					JLabel tmp = (JLabel) e.getSource();
+					try {
+						//둘 다 false
+						if(!data.getcharacterData().getSelectExpeditionCharacter() && !data.getcharacterData().getSelectDefenceCharacter()) {
+							characterselectPanel.getTitleLabel().setText("Choose Defence Character");
+							data.getcharacterData().ChangeExpeditionCharacterSelected();
+							data.getcharacterData().setExpeditionCharacter(data.getcharacterData().getThisCharacter(tmp.getText()));
+						}
+						else if(data.getcharacterData().getSelectExpeditionCharacter() && !data.getcharacterData().getSelectDefenceCharacter() && !data.getcharacterData().getExpeditionCharacter().getName().equals(tmp.getText())) {
+							characterselectPanel.getTitleLabel().setText("Done");
+							data.getcharacterData().ChangeDefenceCharacterSelected();
+							data.getcharacterData().setDefenceCharacter(data.getcharacterData().getThisCharacter(tmp.getText()));
+						}
+						else {
+							characterselectPanel.getTitleLabel().setText("Choose Expedition Character");
+							data.getcharacterData().ChangeFalse();
+						}
+					} catch (CloneNotSupportedException e1) {
+						e1.printStackTrace();
+					}
 				}
 
 				@Override
@@ -305,6 +330,26 @@ public class FrameController extends JFrame {
 
 					@Override
 					public void mousePressed(MouseEvent e) {
+							JLabel tmp = (JLabel) e.getSource();
+							try {
+								//둘 다 false
+								if(!data.getcharacterData().getSelectExpeditionCharacter() && !data.getcharacterData().getSelectDefenceCharacter()) {
+									characterselectPanel.getTitleLabel().setText("Choose Defence Character");
+									data.getcharacterData().ChangeExpeditionCharacterSelected();
+									data.getcharacterData().setExpeditionCharacter(data.getcharacterData().getThisCharacter(tmp.getText()));
+								}
+								else if(data.getcharacterData().getSelectExpeditionCharacter() && !data.getcharacterData().getSelectDefenceCharacter() && !data.getcharacterData().getExpeditionCharacter().getName().equals(tmp.getText())) {
+									characterselectPanel.getTitleLabel().setText("Done");
+									data.getcharacterData().ChangeDefenceCharacterSelected();
+									data.getcharacterData().setDefenceCharacter(data.getcharacterData().getThisCharacter(tmp.getText()));
+								}
+								else {
+									characterselectPanel.getTitleLabel().setText("Choose Expedition Character");
+									data.getcharacterData().ChangeFalse();
+								}
+							} catch (CloneNotSupportedException e1) {
+								e1.printStackTrace();
+							} 
 						
 					}
 
@@ -333,6 +378,45 @@ public class FrameController extends JFrame {
 					}});
 		
 		}
+		characterselectPanel.getTitleLabel().addMouseListener(new MouseListener() {
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				if(characterselectPanel.getTitleLabel().getText().equals("Done"))
+				{
+					characterselectPanel.setVisible(false);
+					setToMapPanel();
+				}
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				if(characterselectPanel.getTitleLabel().getText().equals("Done"))
+				{
+					characterselectPanel.getTitleLabel().setBackground(Color.BLUE);
+					characterselectPanel.getTitleLabel().setForeground(Color.white);
+				}
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				if(characterselectPanel.getTitleLabel().getText().equals("Done"))
+				{
+					characterselectPanel.getTitleLabel().setBackground(Color.RED);
+					characterselectPanel.getTitleLabel().setForeground(Color.white);
+				}
+				
+			}});
 		
 	}
 

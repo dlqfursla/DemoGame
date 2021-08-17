@@ -1,6 +1,6 @@
 package Data;
-
-public class Character {
+import java.lang.Cloneable;
+public class Character implements Cloneable {
 		private String Name;
 		private int HP;
 		private int Stamina;
@@ -10,6 +10,17 @@ public class Character {
 		private int Defence;
 		private int Regeneration;
 
+        public Character() {
+            setName("N/A");
+            setHP(0);
+            setStamina(0);
+            setMinAtk(0);
+            setMaxAtk(0);
+            setIntelligence(0);
+            setDefence(0);
+            setRegeneration(0);
+            
+        }
         public Character(String Name, int HP, int Stamina, int MaxAtk, int MinAtk, int Intelligence, int Defence, int Regeneration) {
             setName(Name);
             setHP(HP);
@@ -72,4 +83,9 @@ public class Character {
         public void setRegeneration(int Regeneration) {
             this.Regeneration = Regeneration;
         }
-}
+        
+        public Character copy() throws CloneNotSupportedException{ 
+            return (Character)clone(); 
+        }
+
+    }

@@ -10,9 +10,16 @@ public class CharacterData {
 	private Character Choi;
 	private Character Jung;
 
-	ArrayList<Character> CharacterList;
+	private ArrayList<Character> CharacterList;
+
+	private boolean SelectExpeditionCharacter = false;
+	private boolean SelectDefenceCharacter = false;
+	private Character ExpeditionCharacter;
+	private Character DefenceCharacter;
 
 	public CharacterData() {
+		ExpeditionCharacter = new Character();
+		DefenceCharacter = new Character();
 		CreateCharacters();
 
 		CharacterList =  new ArrayList<Character>(); 
@@ -36,7 +43,56 @@ public class CharacterData {
 	public ArrayList<Character> getCharacterList() {
 		return CharacterList;
 	}
+	public Character getExpeditionCharacter() {
+		return ExpeditionCharacter;
+	}
+	public Character getDefenceCharacter() {
+		return DefenceCharacter;
+	}
+	public boolean getSelectExpeditionCharacter() {
+		return SelectExpeditionCharacter;
+	}
+	public boolean getSelectDefenceCharacter() {
+		return SelectDefenceCharacter;
+	}
+	
 
+	public void setExpeditionCharacter(Character character) {
+		if(!SelectExpeditionCharacter || !character.getName().equals(ExpeditionCharacter.getName()))
+			ExpeditionCharacter = character;
+	}
+
+	public void setDefenceCharacter(Character character) {
+		if(!SelectDefenceCharacter || !character.getName().equals(DefenceCharacter.getName()))
+			DefenceCharacter = character;
+	}
+
+	public void changeEnDCharacter() throws CloneNotSupportedException{
+		Character tmp = ExpeditionCharacter.copy();
+		ExpeditionCharacter = DefenceCharacter.copy();
+		DefenceCharacter = tmp.copy();
+	}
+
+	public Character getThisCharacter(String name) throws CloneNotSupportedException {
+		Character tmp = new Character();
+		for(Character item : CharacterList) {
+			if(item.getName().equals(name)) {
+				tmp = item.copy();
+				break;
+			}
+		}
+		return tmp;
+	}
+	public void ChangeExpeditionCharacterSelected() {
+		SelectExpeditionCharacter = !SelectExpeditionCharacter;
+	}
+	public void ChangeDefenceCharacterSelected() {
+		SelectDefenceCharacter = !SelectDefenceCharacter;
+	}
+	public void ChangeFalse() {
+		SelectExpeditionCharacter = false;
+		SelectDefenceCharacter = false;
+	}
 
 
 	// public Character getSong() {

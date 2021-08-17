@@ -2,14 +2,10 @@ package Frame;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.GridLayout;
 
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
-@SuppressWarnings("serial")
 public class MapPanel extends BasePanel {
    int a= 3;
    int b = 8;
@@ -270,6 +266,10 @@ public class MapPanel extends BasePanel {
    Map6Label[8].setLocation(60*a,75*a);
    Map6Label[9].setLocation(85*a,80*a);
 
+   }
+
+   public void setinitData() {
+      
    }
    
 }

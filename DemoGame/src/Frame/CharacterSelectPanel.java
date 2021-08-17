@@ -66,9 +66,9 @@ public class CharacterSelectPanel extends BasePanel {
             CharacterPnl[i].add(CharacterPortraitLbl[i]);
         }
 
-        TitleLbl = new JLabel("Choose 2 Characters");
+        TitleLbl = new JLabel("<html>Choose 2 Characters<br />Expedition Character first</html>");
         TitleLbl.setBounds(300,20, 360, 100);
-        TitleLbl.setFont(new Font("Copperplate Gothic", Font.BOLD, 30));
+        TitleLbl.setFont(new Font("Copperplate Gothic", Font.BOLD, 20));
         TitleLbl.setHorizontalAlignment(JLabel.CENTER);
         TitleLbl.setOpaque(true);
         TitleLbl.setBackground(Color.RED);
@@ -98,6 +98,9 @@ public class CharacterSelectPanel extends BasePanel {
     }
     public JLabel getBackLabel() {
         return BacktoStartLbl;
+    }
+    public JLabel getTitleLabel() {
+        return TitleLbl;
     }
     public static void setDataForCharacterList(DataController data) {
         ArrayList<Character> List = data.getcharacterData().getCharacterList();
