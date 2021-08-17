@@ -341,33 +341,7 @@ public class FrameController extends JFrame {
 
 	public void AddListenersToMapPanel() {
 
-		mapPanel.getToCharacterBtn().addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				mapPanel.setVisible(false);
-				setToCharacterPanel();
-			}
-
-		});
-		mapPanel.getToStartBtn().addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				mapPanel.setVisible(false);
-				setToStartPanel();
-			}
-
-		});
-		mapPanel.getToStatsBtn().addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				mapPanel.setVisible(false);
-				setToStatsPanel();
-			}
-
-		});
+		
 
 	}
 
