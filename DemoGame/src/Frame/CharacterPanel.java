@@ -47,6 +47,14 @@ public class CharacterPanel extends BasePanel {
 		return ToBattleBtn;
 	}
 
+	public JPanel getExpeditionPnl(){
+		return ExpeditionPnl;
+	}
+
+	public JPanel getDefencePnl(){
+		return DefencePnl;
+	}
+
 	private void initCharacterPanel() {
 		BackToMapBtn = new JButton("BackToMapBtn");
 		BackToMapBtn.setSize(200, 150);

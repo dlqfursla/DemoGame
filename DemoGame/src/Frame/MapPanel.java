@@ -15,14 +15,19 @@ public class MapPanel extends BasePanel {
    int b = 8;
    int c = 2;
 
-   JPanel EndTurnPnl = new JPanel();
+   JPanel TopPnl = new JPanel();
    JLabel endLabel = new JLabel("내전까지 앞으로 40턴 남았습니다");
 
-   JPanel BattlePanel = new JPanel();
+   JLabel characterLabel = new JLabel("Character");
+
+
+   JPanel BattlePnl = new JPanel();
    JLabel battle1Label = new JLabel("도착까지 1턴 남았습니다");
    JLabel battle2Label = new JLabel("도착까지 3턴 남았습니다");
    JLabel battle3Label = new JLabel("도착까지 4턴 남았습니다");
 
+   JPanel BasePnl;
+   JLabel BaseLabel = new JLabel("B");
 
    JPanel Map1Pnl;
    JLabel[] Map1Label = new JLabel[10];
@@ -61,7 +66,9 @@ public class MapPanel extends BasePanel {
    public JLabel getToendLabel(){
       return endLabel;
    }
-
+   public JLabel getcharacterLabel() {
+      return characterLabel;
+   }
    public JLabel[] getToMap1Label() {
       return Map1Label;
    }
@@ -83,19 +90,75 @@ public class MapPanel extends BasePanel {
    
    private void initMapPanel() {
 
-      EndTurnPnl.setLayout(null);
-      EndTurnPnl.setBounds(400,0,300,50);
-      add(EndTurnPnl);
+      TopPnl.setLayout(null);
+      TopPnl.setBounds(00,0,800,50);
+      TopPnl.setBackground(Color.black);
+      add(TopPnl);
+
+      characterLabel.setSize(100,30);
+      characterLabel.setLocation(0, 0);
+      characterLabel.setOpaque(true);
+      characterLabel.setHorizontalAlignment(JLabel.CENTER);
+      characterLabel.setBackground(Color.GRAY);
+      characterLabel.setFont(new Font("Kopub돋움체 bold", Font.BOLD, 20));
+      characterLabel.setForeground(Color.black);
+      TopPnl.add(characterLabel);
 
       endLabel.setSize(300,50);
-      endLabel.setLocation(0,0);
+      endLabel.setLocation(400,0);
       endLabel.setOpaque(true);
       endLabel.setHorizontalAlignment(JLabel.CENTER);
       endLabel.setBackground(new Color(250,250,210));
       endLabel.setFont(new Font("Kopub돋움체 bold", Font.BOLD, 20));
       endLabel.setForeground(Color.black);
-      EndTurnPnl.add(endLabel);
-      
+      TopPnl.add(endLabel);
+
+      BattlePnl.setLayout(null);
+      BattlePnl.setBounds(1020,0, 250, 150);
+      add(BattlePnl);
+
+      battle1Label.setSize(250,50);
+      battle1Label.setLocation(0,0);
+      battle1Label.setOpaque(true);
+      battle1Label.setHorizontalAlignment(JLabel.CENTER);
+      battle1Label.setBackground(new Color(255,153,000));
+      battle1Label.setFont(new Font("Kopub돋움체 bold", Font.BOLD, 20));
+      battle1Label.setForeground(Color.black);
+      BattlePnl.add(battle1Label);
+
+      battle2Label.setSize(250,50);
+      battle2Label.setLocation(0,50);
+      battle2Label.setOpaque(true);
+      battle2Label.setHorizontalAlignment(JLabel.CENTER);
+      battle2Label.setBackground(new Color(102,051,204));
+      battle2Label.setFont(new Font("Kopub돋움체 bold", Font.BOLD, 20));
+      battle2Label.setForeground(Color.black);
+      BattlePnl.add(battle2Label);
+
+      battle3Label.setSize(250,50);
+      battle3Label.setLocation(0,100);
+      battle3Label.setOpaque(true);
+      battle3Label.setHorizontalAlignment(JLabel.CENTER);
+      battle3Label.setBackground(new Color(105,105,105));
+      battle3Label.setFont(new Font("Kopub돋움체 bold", Font.BOLD, 20));
+      battle3Label.setForeground(Color.black);
+      BattlePnl.add(battle3Label);
+
+
+
+      BasePnl = new JPanel();
+      BasePnl.setLayout(null);
+      BasePnl.setBounds(520, 350, 20, 20);
+      add(BasePnl);
+
+      BaseLabel.setSize(20,20);
+      BaseLabel.setLocation(0,0);
+      BaseLabel.setOpaque(true);
+      BaseLabel.setHorizontalAlignment(JLabel.CENTER);
+      BaseLabel.setBackground(Color.yellow);
+      BaseLabel.setFont(new Font("Kopub돋움체 bold", Font.BOLD, 20));
+      BaseLabel.setForeground(Color.black);
+      BasePnl.add(BaseLabel);
 
 
       Map1Pnl = new JPanel();
