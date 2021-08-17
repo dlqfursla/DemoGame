@@ -61,8 +61,8 @@ public class FrameController extends JFrame {
 
 	public void Start() {
 		//setToCharacterSelectPanel();
-		setToStartPanel();
-		//setToBattlePanel();
+		//setToStartPanel();
+		setToBattlePanel();
 		//setToCharacterPanel();
 	}
 

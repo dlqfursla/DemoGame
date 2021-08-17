@@ -34,7 +34,10 @@ public class BattlePanel extends BasePanel {
 	private JLabel[] MaxHPLbl;
 	private JLabel[] HPLbl;
 
+	private JPanel StaminaPnl;
+	private JLabel MaxStaminaLbl;
 	private JLabel StaminaLbl;
+
 
 	private JPanel[] debuffPnl;
 	private JLabel[] stunLbl;
@@ -243,7 +246,6 @@ public class BattlePanel extends BasePanel {
 		for(int i=0 ; i < 6 ; i++ ) {
 			HPPnl[i] = new JPanel();
 			HPPnl[i].setLayout(new GridLayout(1,2));
-			HPPnl[i].setFont(new Font("Copperplate Gothic", Font.BOLD, 20));
 			HPPnl[i].setOpaque(true);
 			HPPnl[i].setBackground(new Color(100, 50 * i, 0));
 			HPPnl[i].setForeground(Color.white);
@@ -272,13 +274,30 @@ public class BattlePanel extends BasePanel {
 
 	
 		// JLabel StaminaLbl;
+
+		StaminaPnl = new JPanel();
+		StaminaPnl.setLayout(new GridLayout(1,2));
+		StaminaPnl.setFont(new Font("Copperplate Gothic", Font.BOLD, 10));
+		StaminaPnl.setOpaque(true);
+		StaminaPnl.setBackground(new Color(200, 170, 10));
+		StaminaPnl.setForeground(Color.white);
+		BottomPnl[0].add(StaminaPnl);
+
+
 		StaminaLbl = new JLabel("StaminaLbl");
 		StaminaLbl.setFont(new Font("Copperplate Gothic", Font.BOLD, 10));
 		StaminaLbl.setOpaque(true);
 		StaminaLbl.setBackground(new Color(100, 142, 0));
 		StaminaLbl.setForeground(Color.white);
-		BottomPnl[0].add(StaminaLbl);
-	
+		StaminaPnl.add(StaminaLbl);
+
+		MaxStaminaLbl = new JLabel("MaxStaminaLbl");
+		MaxStaminaLbl.setFont(new Font("Copperplate Gothic", Font.BOLD, 10));
+		MaxStaminaLbl.setOpaque(true);
+		MaxStaminaLbl.setBackground(new Color(250, 50, 140));
+		MaxStaminaLbl.setForeground(Color.white);
+		StaminaPnl.add(MaxStaminaLbl);
+
 		// JPanel[] debuffPnl;
 		debuffPnl = new JPanel[6];
 		for(int i=0 ; i < 6 ; i++ ) {

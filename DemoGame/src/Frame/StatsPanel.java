@@ -3,14 +3,14 @@ package Frame;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
-import java.awt.Container;
+
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class StatsPanel extends BasePanel {
-	private Container cone;
+
 	private JButton BackToMapBtn;
 	
 	private JPanel ExpeditionPnl;
@@ -73,7 +73,6 @@ public class StatsPanel extends BasePanel {
 		ExpeditionPnl.setOpaque(true);
 		ExpeditionPnl.setBackground(Color.YELLOW);
 		ExpeditionPnl.setForeground(Color.white);
-
 		add(ExpeditionPnl);
 
 		ExpeditionCharacterLbl = new JLabel("ExpeditionCharacterLbl");
