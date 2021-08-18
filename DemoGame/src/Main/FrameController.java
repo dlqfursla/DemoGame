@@ -492,6 +492,7 @@ public class FrameController extends JFrame {
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
+				
 				mapPanel.getcharacterLabel().setBackground(Color.BLUE);
 				mapPanel.getcharacterLabel().setBackground(Color.WHITE);
 			}
@@ -503,6 +504,188 @@ public class FrameController extends JFrame {
 		
 			}});
 		
+		for(int i=0; i<11; i++) {
+			//Map1Label//////////////////////////////////////////////////////////////////////
+			if(mapPanel.getToMap1Label().length > i) {
+				mapPanel.getToMap1Label(i).addMouseListener(new MouseListener() {
+
+					@Override
+					public void mouseClicked(MouseEvent e) {
+					}
+
+					@Override
+					public void mousePressed(MouseEvent e) {
+					}
+
+					@Override
+					public void mouseReleased(MouseEvent e) {
+					}
+
+					@Override
+					public void mouseEntered(MouseEvent e) {	
+						JLabel tmp = (JLabel) e.getSource();
+						tmp.setBackground(new Color(153,51,153)); //배경색
+						tmp.setForeground(Color.black); //글씨색
+					}
+
+					@Override
+					public void mouseExited(MouseEvent e) {
+						JLabel tmp = (JLabel) e.getSource();
+						tmp.setBackground(new Color(051,153,051)); //배경색
+						tmp.setForeground(Color.white); //글씨색
+					}} );
+			}
+			//Map2Label//////////////////////////////////////////////////////////////////////
+			if(mapPanel.getToMap2Label().length > i) {
+				mapPanel.getToMap2Label(i).addMouseListener(new MouseListener() {
+
+					@Override
+					public void mouseClicked(MouseEvent e) {
+					}
+
+					@Override
+					public void mousePressed(MouseEvent e) {
+					}
+
+					@Override
+					public void mouseReleased(MouseEvent e) {
+					}
+
+					@Override
+					public void mouseEntered(MouseEvent e) {	
+						JLabel tmp = (JLabel) e.getSource();
+						tmp.setBackground(new Color(204,102,51)); //배경색
+						tmp.setForeground(Color.black); //글씨색
+					}
+
+					@Override
+					public void mouseExited(MouseEvent e) {
+						JLabel tmp = (JLabel) e.getSource();
+						tmp.setBackground(new Color(102,051,204)); //배경색
+						tmp.setForeground(Color.white); //글씨색
+					}} );
+			}
+			//Map3Label//////////////////////////////////////////////////////////////////////
+			if(mapPanel.getToMap3Label().length > i) {
+				mapPanel.getToMap3Label(i).addMouseListener(new MouseListener() {
+
+					@Override
+					public void mouseClicked(MouseEvent e) {
+					}
+
+					@Override
+					public void mousePressed(MouseEvent e) {
+					}
+
+					@Override
+					public void mouseReleased(MouseEvent e) {
+					}
+
+					@Override
+					public void mouseEntered(MouseEvent e) {	
+						JLabel tmp = (JLabel) e.getSource();
+						tmp.setBackground(new Color(204,51,51)); //배경색
+						tmp.setForeground(Color.black); //글씨색
+					}
+
+					@Override
+					public void mouseExited(MouseEvent e) {
+						JLabel tmp = (JLabel) e.getSource();
+						tmp.setBackground(new Color(051,051,204)); //배경색
+						tmp.setForeground(Color.white); //글씨색
+					}} );
+			}
+			//Map4Label//////////////////////////////////////////////////////////////////////
+			if(mapPanel.getToMap4Label().length > i) {
+				mapPanel.getToMap4Label(i).addMouseListener(new MouseListener() {
+
+					@Override
+					public void mouseClicked(MouseEvent e) {
+					}
+
+					@Override
+					public void mousePressed(MouseEvent e) {
+					}
+
+					@Override
+					public void mouseReleased(MouseEvent e) {
+					}
+
+					@Override
+					public void mouseEntered(MouseEvent e) {	
+						JLabel tmp = (JLabel) e.getSource();
+						tmp.setBackground(new Color(0,255,0)); //배경색
+						tmp.setForeground(Color.black); //글씨색
+					}
+
+					@Override
+					public void mouseExited(MouseEvent e) {
+						JLabel tmp = (JLabel) e.getSource();
+						tmp.setBackground(new Color(255,00,255)); //배경색
+						tmp.setForeground(Color.white); //글씨색
+					}} );
+			}
+			//Map5Label//////////////////////////////////////////////////////////////////////
+			if(mapPanel.getToMap5Label().length > i) {
+				mapPanel.getToMap5Label(i).addMouseListener(new MouseListener() {
+
+					@Override
+					public void mouseClicked(MouseEvent e) {
+					}
+
+					@Override
+					public void mousePressed(MouseEvent e) {
+					}
+
+					@Override
+					public void mouseReleased(MouseEvent e) {
+					}
+
+					@Override
+					public void mouseEntered(MouseEvent e) {	
+						JLabel tmp = (JLabel) e.getSource();
+						tmp.setBackground(new Color(0,153,255)); //배경색
+						tmp.setForeground(Color.black); //글씨색
+					}
+
+					@Override
+					public void mouseExited(MouseEvent e) {
+						JLabel tmp = (JLabel) e.getSource();
+						tmp.setBackground(new Color(255,153,000)); //배경색
+						tmp.setForeground(Color.white); //글씨색
+					}} );
+			}
+			//Map6Label//////////////////////////////////////////////////////////////////////
+			if(mapPanel.getToMap6Label().length > i) {
+				mapPanel.getToMap6Label(i).addMouseListener(new MouseListener() {
+
+					@Override
+					public void mouseClicked(MouseEvent e) {
+					}
+
+					@Override
+					public void mousePressed(MouseEvent e) {
+					}
+
+					@Override
+					public void mouseReleased(MouseEvent e) {
+					}
+
+					@Override
+					public void mouseEntered(MouseEvent e) {	
+						JLabel tmp = (JLabel) e.getSource();
+						tmp.setBackground(new Color(150,150,150)); //배경색
+						tmp.setForeground(Color.black); //글씨색
+					}
+
+					@Override
+					public void mouseExited(MouseEvent e) {
+						JLabel tmp = (JLabel) e.getSource();
+						tmp.setBackground(new Color(105,105,105)); //배경색
+						tmp.setForeground(Color.white); //글씨색
+					}} );
+			}
+		}
 
 	}
 
