@@ -22,7 +22,7 @@ public class CharacterData {
 		DefenceCharacter = new Character();
 		CreateCharacters();
 
-		CharacterList =  new ArrayList<Character>(); 
+		CharacterList = new ArrayList<Character>();
 
 		addCharactersInList();
 	}
@@ -34,40 +34,44 @@ public class CharacterData {
 		Jung = new Character("Jung", 500, 200, 10, 5, 80, 60, 50);
 	}
 
-	private void addCharactersInList() {	
+	private void addCharactersInList() {
 		CharacterList.add(Song);
 		CharacterList.add(Park);
 		CharacterList.add(Choi);
 		CharacterList.add(Jung);
 	}
+
 	public ArrayList<Character> getCharacterList() {
 		return CharacterList;
 	}
+
 	public Character getExpeditionCharacter() {
 		return ExpeditionCharacter;
 	}
+
 	public Character getDefenceCharacter() {
 		return DefenceCharacter;
 	}
+
 	public boolean getSelectExpeditionCharacter() {
 		return SelectExpeditionCharacter;
 	}
+
 	public boolean getSelectDefenceCharacter() {
 		return SelectDefenceCharacter;
 	}
-	
 
 	public void setExpeditionCharacter(Character character) {
-		if(!SelectExpeditionCharacter || !character.getName().equals(ExpeditionCharacter.getName()))
+		if (!SelectExpeditionCharacter || !character.getName().equals(ExpeditionCharacter.getName()))
 			ExpeditionCharacter = character;
 	}
 
 	public void setDefenceCharacter(Character character) {
-		if(!SelectDefenceCharacter || !character.getName().equals(DefenceCharacter.getName()))
+		if (!SelectDefenceCharacter || !character.getName().equals(DefenceCharacter.getName()))
 			DefenceCharacter = character;
 	}
 
-	public void changeEnDCharacter() throws CloneNotSupportedException{
+	public void changeEnDCharacter() throws CloneNotSupportedException {
 		Character tmp = ExpeditionCharacter.copy();
 		ExpeditionCharacter = DefenceCharacter.copy();
 		DefenceCharacter = tmp.copy();
@@ -75,40 +79,42 @@ public class CharacterData {
 
 	public Character getThisCharacter(String name) throws CloneNotSupportedException {
 		Character tmp = new Character();
-		for(Character item : CharacterList) {
-			if(item.getName().equals(name)) {
+		for (Character item : CharacterList) {
+			if (item.getName().equals(name)) {
 				tmp = item.copy();
 				break;
 			}
 		}
 		return tmp;
 	}
+
 	public void ChangeExpeditionCharacterSelected() {
 		SelectExpeditionCharacter = !SelectExpeditionCharacter;
 	}
+
 	public void ChangeDefenceCharacterSelected() {
 		SelectDefenceCharacter = !SelectDefenceCharacter;
 	}
+
 	public void ChangeFalse() {
 		SelectExpeditionCharacter = false;
 		SelectDefenceCharacter = false;
 	}
 
-
 	// public Character getSong() {
-	// 	return Song;
+	// return Song;
 	// }
-	
+
 	// public Character getPark() {
-	// 	return Park;
+	// return Park;
 	// }
 
 	// public Character getChoi() {
-	// 	return Choi;
+	// return Choi;
 	// }
 
 	// public Character getJung() {
-	// 	return Jung;
+	// return Jung;
 	// }
 
 }

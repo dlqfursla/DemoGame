@@ -12,10 +12,11 @@ public class MapData {
 	ArrayList<Integer> map6LabelsMapping;
 
 	public MapData() {
-		
+
 	}
+
 	public void initMapData() {
-		//LabelsMapping = new ArrayList<int[]>[6];
+		// LabelsMapping = new ArrayList<int[]>[6];
 		map1LabelsMapping = new ArrayList<Integer>();
 		map2LabelsMapping = new ArrayList<Integer>();
 		map3LabelsMapping = new ArrayList<Integer>();

@@ -12,7 +12,7 @@ public class DataController {
     public DataController() {
         initDataController();
     }
-    
+
     public void initDataController() {
         battleData = new BattleData();
         characterData = new CharacterData();
@@ -23,13 +23,15 @@ public class DataController {
     public BattleData getBattleData() {
         return battleData;
     }
-    
+
     public CharacterData getcharacterData() {
         return characterData;
     }
+
     public MapData getmapData() {
         return mapData;
     }
+
     public StatsData getstatsData() {
         return statsData;
     }
