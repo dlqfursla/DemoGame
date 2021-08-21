@@ -9,10 +9,11 @@ public class AdSkill extends Skill {
 
 
 
-    public AdSkill(String Name, int MaxGauge, int Gauge, int OriginalDamage) {
-        super(Name, MaxGauge, Gauge);
+    public AdSkill(String Name, int MaxGauge, int Gauge, int OriginalDamage, int Stun, int Weaken, int Slow) {
+        super(Name, MaxGauge, Gauge, Stun, Weaken, Slow);
 
-        this.OriginalDamage = OriginalDamage;
+        setOriginalDamage(OriginalDamage);
+
     }
 
     public int getOriginalDamage() {

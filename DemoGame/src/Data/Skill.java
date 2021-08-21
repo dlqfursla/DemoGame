@@ -10,10 +10,14 @@ public class Skill {
     int Weaken; // 가하는 데미지 30% 감소
     int Slow; // 맞는 데미지 30% 증가
 
-    public Skill(String Name, int MaxGauge, int Gauge) {
-        this.Name = Name;
-        this.MaxGauge = MaxGauge;
-        this.Gauge = Gauge;
+    public Skill(String Name, int MaxGauge, int Gauge, int Stun, int Weaken, int Slow) {
+        setName(Name);
+        setMaxGauge(MaxGauge);
+        setGauge(Gauge);
+
+        setStun(Stun);
+        setWeaken(Weaken);
+        setSLow(Slow);
     }
 
     public String getName() {

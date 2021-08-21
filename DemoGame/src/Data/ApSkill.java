@@ -10,11 +10,11 @@ public class ApSkill extends Skill {
     int DynamicHeal;
 
      
-    public ApSkill(String Name, int MaxGauge, int Gauge, int OriginalDamage, int OriginalHeal) {
-        super(Name, MaxGauge, Gauge);
+    public ApSkill(String Name, int MaxGauge, int Gauge, int OriginalDamage, int OriginalHeal, int Stun, int Weaken, int Slow) {
+        super(Name, MaxGauge, Gauge, Stun, Weaken, Slow);
 
-        this.OriginalDamage = OriginalDamage;
-        this.OriginalHeal = OriginalHeal;
+        setOriginalDamage(OriginalDamage);
+        setOriginalHeal(OriginalHeal);
     }
 
     public int getOriginalDamage() {

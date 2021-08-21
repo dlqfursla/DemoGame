@@ -12,6 +12,8 @@ public class Character implements Cloneable {
     private int Defence;
     private int Regeneration;
 
+    private Skill[] Skills;
+
     public Character() {
         setName("N/A");
         setHP(0);
@@ -34,7 +36,10 @@ public class Character implements Cloneable {
         setIntelligence(Intelligence);
         setDefence(Defence);
         setRegeneration(Regeneration);
+
+        Skills = new Skill[8];
     }
+    
 
     public String getName() {
         return Name;
@@ -68,6 +73,11 @@ public class Character implements Cloneable {
         return Regeneration;
     }
 
+    public Skill getSkills(int i) {
+        return Skills[i];
+    }
+
+
     public void setName(String Name) {
         this.Name = Name;
     }
@@ -100,6 +110,10 @@ public class Character implements Cloneable {
 
     public void setRegeneration(int Regeneration) {
         this.Regeneration = Regeneration;
+    }
+
+    public void setSkills(Skill skill, int i) {
+        Skills[i] = skill;
     }
 
     public Character copy() throws CloneNotSupportedException {
