@@ -2,10 +2,10 @@ package Data;
 
 public class AdSkill extends Skill {
     // 원본 값
-    int OriginalDamage;
+    private int OriginalDamage;
 
     // 플레이중 버프/디버프로 바뀐 값
-    int DynamicDamage;
+    private int DynamicDamage;
 
 
 

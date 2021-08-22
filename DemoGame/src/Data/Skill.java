@@ -1,14 +1,14 @@
 package Data;
 
 public class Skill {
-    String Name;
-    int MaxGauge; // 채울 수 있는 총 게이지
-    int Gauge; // 단위 게이지, MaxGauge를 몇 등분할지의 값
+    private String Name;
+    private int MaxGauge; // 채울 수 있는 총 게이지
+    private int Gauge; // 단위 게이지, MaxGauge를 몇 등분할지의 값
 
     // 디버프, 값에 따라 몇 턴 동안 지속될지 결정
-    int Stun; // 다음 턴 쉼
-    int Weaken; // 가하는 데미지 30% 감소
-    int Slow; // 맞는 데미지 30% 증가
+    private int Stun; // 다음 턴 쉼
+    private int Weaken; // 가하는 데미지 30% 감소
+    private int Slow; // 맞는 데미지 30% 증가
 
     public Skill(String Name, int MaxGauge, int Gauge, int Stun, int Weaken, int Slow) {
         setName(Name);
@@ -37,11 +37,11 @@ public class Skill {
     }
 
     public int getWeaken() {
-        return Stun;
+        return Weaken;
     }
 
-    public int getSLow() {
-        return Stun;
+    public int getSlow() {
+        return Slow;
     }
 
     public void setName(String Name) {

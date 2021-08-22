@@ -2,12 +2,12 @@ package Data;
 
 public class ApSkill extends Skill {
     // 원본 값
-    int OriginalDamage;
-    int OriginalHeal;
+    private int OriginalDamage;
+    private int OriginalHeal;
 
     // 플레이중 버프/디버프로 바뀐 값
-    int DynamicDamage;
-    int DynamicHeal;
+    private int DynamicDamage;
+    private int DynamicHeal;
 
      
     public ApSkill(String Name, int MaxGauge, int Gauge, int OriginalDamage, int OriginalHeal, int Stun, int Weaken, int Slow) {
