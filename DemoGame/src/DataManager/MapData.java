@@ -6,12 +6,12 @@ import Data.MapLink;
 
 public class MapData {
 	private ArrayList<ArrayList<MapLink>> LabelsMappingList; //데이터 전체 리스트
-	private ArrayList<MapLink> map1LabelsMapping;
-	private ArrayList<MapLink> map2LabelsMapping;
-	private ArrayList<MapLink> map3LabelsMapping;
-	private ArrayList<MapLink> map4LabelsMapping;
-	private ArrayList<MapLink> map5LabelsMapping;
-	private ArrayList<MapLink> map6LabelsMapping;
+	private ArrayList<MapLink> map1LabelsMapping; // 왼쪽 위
+	private ArrayList<MapLink> map2LabelsMapping; // 위
+	private ArrayList<MapLink> map3LabelsMapping; // 오른쪽 위
+	private ArrayList<MapLink> map4LabelsMapping; // 왼쪽 아래
+	private ArrayList<MapLink> map5LabelsMapping; // 아래
+	private ArrayList<MapLink> map6LabelsMapping; // 오른쪽 아래
 
 	public MapData() {
 		initMapData();
