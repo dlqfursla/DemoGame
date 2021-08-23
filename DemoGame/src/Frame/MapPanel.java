@@ -187,11 +187,9 @@ public class MapPanel extends BasePanel {
       add(Map1Pnl);
 
       for (int i = 0; i < 10; i++) {
-         // Map1Label[i] = new JLabel(point_num1[i]);
-         Map1Label[i] = new JLabel("1 " + point_num1[i] + " " + i);
+         Map1Label[i] = new JLabel(point_num1[i]);
          Map1Label[i].setSize(20, 20);
-         // Map1Label[i].setFont(new Font("Copperplate Gothic", Font.BOLD, 20)); //글씨체
-         Map1Label[i].setFont(new Font("Copperplate Gothic", Font.BOLD, 8)); // 글씨체
+         Map1Label[i].setFont(new Font("Copperplate Gothic", Font.BOLD, 20)); // 글씨체
          Map1Label[i].setOpaque(true); // 배경색설정
          Map1Label[i].setHorizontalAlignment(JLabel.CENTER); // 가운데정렬
          Map1Label[i].setBackground(new Color(051, 153, 051)); // 배경색
@@ -217,11 +215,9 @@ public class MapPanel extends BasePanel {
       add(Map2Pnl);
 
       for (int i = 0; i < 9; i++) {
-         // Map2Label[i] = new JLabel(point_num2[i]);
-         Map2Label[i] = new JLabel("2 " + point_num2[i] + " " + i);
+         Map2Label[i] = new JLabel(point_num2[i]);
          Map2Label[i].setSize(20, 20);
-         // Map2Label[i].setFont(new Font("Copperplate Gothic", Font.BOLD, 20)); //글씨체
-         Map2Label[i].setFont(new Font("Copperplate Gothic", Font.BOLD, 8)); // 글씨체
+         Map2Label[i].setFont(new Font("Copperplate Gothic", Font.BOLD, 20)); // 글씨체
          Map2Label[i].setOpaque(true); // 배경색설정
          Map2Label[i].setHorizontalAlignment(JLabel.CENTER); // 가운데정렬
          Map2Label[i].setBackground(new Color(102, 051, 204)); // 배경색
@@ -246,11 +242,9 @@ public class MapPanel extends BasePanel {
       add(Map3Pnl);
 
       for (int i = 0; i < 10; i++) {
-         // Map3Label[i] = new JLabel(point_num3[i]);
-         Map3Label[i] = new JLabel("3 " + point_num3[i] + " " + i);
+         Map3Label[i] = new JLabel(point_num3[i]);
          Map3Label[i].setSize(20, 20);
-         // Map3Label[i].setFont(new Font("Copperplate Gothic", Font.BOLD, 20)); //글씨체
-         Map3Label[i].setFont(new Font("Copperplate Gothic", Font.BOLD, 8)); // 글씨체
+         Map3Label[i].setFont(new Font("Copperplate Gothic", Font.BOLD, 20)); // 글씨체
          Map3Label[i].setOpaque(true); // 배경색설정
          Map3Label[i].setHorizontalAlignment(JLabel.CENTER); // 가운데정렬
          Map3Label[i].setBackground(new Color(051, 051, 204)); // 배경색
@@ -276,11 +270,9 @@ public class MapPanel extends BasePanel {
       add(Map4Pnl);
 
       for (int i = 0; i < 11; i++) {
-         // Map4Label[i] = new JLabel(point_num4[i]);
-         Map4Label[i] = new JLabel("4 " + point_num4[i] + " " + i);
+         Map4Label[i] = new JLabel(point_num4[i]);
          Map4Label[i].setSize(20, 20);
-         // Map4Label[i].setFont(new Font("Copperplate Gothic", Font.BOLD, 20)); //글씨체
-         Map4Label[i].setFont(new Font("Copperplate Gothic", Font.BOLD, 8)); // 글씨체
+         Map4Label[i].setFont(new Font("Copperplate Gothic", Font.BOLD, 20)); // 글씨체
          Map4Label[i].setOpaque(true); // 배경색설정
          Map4Label[i].setHorizontalAlignment(JLabel.CENTER); // 가운데정렬
          Map4Label[i].setBackground(new Color(255, 00, 255)); // 배경색
@@ -307,11 +299,9 @@ public class MapPanel extends BasePanel {
       add(Map5Pnl);
 
       for (int i = 0; i < 10; i++) {
-         // Map5Label[i] = new JLabel(point_num5[i]);
-         Map5Label[i] = new JLabel("5 " + point_num5[i] + " " + i);
+         Map5Label[i] = new JLabel(point_num5[i]);
          Map5Label[i].setSize(20, 20);
-         // Map5Label[i].setFont(new Font("Copperplate Gothic", Font.BOLD, 20)); //글씨체
-         Map5Label[i].setFont(new Font("Copperplate Gothic", Font.BOLD, 8)); // 글씨체
+         Map5Label[i].setFont(new Font("Copperplate Gothic", Font.BOLD, 20)); // 글씨체
          Map5Label[i].setOpaque(true); // 배경색설정
          Map5Label[i].setHorizontalAlignment(JLabel.CENTER); // 가운데정렬
          Map5Label[i].setBackground(new Color(255, 153, 000)); // 배경색
@@ -337,11 +327,9 @@ public class MapPanel extends BasePanel {
       add(Map6Pnl);
 
       for (int i = 0; i < 10; i++) {
-         // Map6Label[i] = new JLabel(point_num6[i]);
-         Map6Label[i] = new JLabel("6 " + point_num6[i] + " " + i);
+         Map6Label[i] = new JLabel(point_num6[i]);
          Map6Label[i].setSize(20, 20);
-         // Map6Label[i].setFont(new Font("Copperplate Gothic", Font.BOLD, 20)); //글씨체
-         Map6Label[i].setFont(new Font("Copperplate Gothic", Font.BOLD, 8)); // 글씨체
+         Map6Label[i].setFont(new Font("Copperplate Gothic", Font.BOLD, 20)); // 글씨체
          Map6Label[i].setOpaque(true); // 배경색설정
          Map6Label[i].setHorizontalAlignment(JLabel.CENTER); // 가운데정렬
          Map6Label[i].setBackground(new Color(105, 105, 105)); // 배경색

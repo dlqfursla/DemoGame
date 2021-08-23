@@ -197,74 +197,74 @@ public class FrameController extends JFrame {
 		});
 	}
 
-	////////// CharacterPanel///////////////////////////////////////////////////////
+	   ////////// CharacterPanel///////////////////////////////////////////////////////
 
-	public void AddListenersToCharacterPanel() {
+	   public void AddListenersToCharacterPanel() {
 
 		characterPanel.getExpeditionPnl().addMouseListener(new MouseListener() {
-
-			@Override
-			public void mouseClicked(MouseEvent e) {
-
-			}
-
-			@Override
-			public void mousePressed(MouseEvent e) {
-				characterPanel.setVisible(false);
-				setToStatsPanel();
-			}
-
-			@Override
-			public void mouseReleased(MouseEvent e) {
-
-			}
-
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				characterPanel.getExpeditionPnl().setBackground(Color.BLUE);
-				characterPanel.getExpeditionPnl().setBackground(Color.WHITE);
-			}
-
-			@Override
-			public void mouseExited(MouseEvent e) {
-				characterPanel.getExpeditionPnl().setBackground(Color.GRAY);
-				characterPanel.getExpeditionPnl().setBackground(Color.YELLOW);
-
-			}
+  
+		   @Override
+		   public void mouseClicked(MouseEvent e) {
+  
+		   }
+  
+		   @Override
+		   public void mousePressed(MouseEvent e) {
+			  characterPanel.setVisible(false);
+			  setToStatsPanel();
+		   }
+  
+		   @Override
+		   public void mouseReleased(MouseEvent e) {
+  
+		   }
+  
+		   @Override
+		   public void mouseEntered(MouseEvent e) {
+			  characterPanel.getExpeditionPnl().setBackground(Color.BLUE);
+			  characterPanel.getExpeditionPnl().setForeground(Color.WHITE);
+		   }
+  
+		   @Override
+		   public void mouseExited(MouseEvent e) {
+			  characterPanel.getExpeditionPnl().setBackground(Color.GRAY);
+			  characterPanel.getExpeditionPnl().setForeground(Color.YELLOW);
+  
+		   }
 		});
-
+  
 		characterPanel.getDefencePnl().addMouseListener(new MouseListener() {
-
-			@Override
-			public void mouseClicked(MouseEvent e) {
-
-			}
-
-			@Override
-			public void mousePressed(MouseEvent e) {
-				characterPanel.setVisible(false);
-				setToStatsPanel();
-			}
-
-			@Override
-			public void mouseReleased(MouseEvent e) {
-
-			}
-
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				characterPanel.getDefencePnl().setBackground(Color.BLUE);
-				characterPanel.getDefencePnl().setBackground(Color.WHITE);
-			}
-
-			@Override
-			public void mouseExited(MouseEvent e) {
-				characterPanel.getDefencePnl().setBackground(Color.GRAY);
-				characterPanel.getDefencePnl().setBackground(Color.YELLOW);
-
-			}
+  
+		   @Override
+		   public void mouseClicked(MouseEvent e) {
+  
+		   }
+  
+		   @Override
+		   public void mousePressed(MouseEvent e) {
+			  characterPanel.setVisible(false);
+			  setToStatsPanel();
+		   }
+  
+		   @Override
+		   public void mouseReleased(MouseEvent e) {
+  
+		   }
+  
+		   @Override
+		   public void mouseEntered(MouseEvent e) {
+			  characterPanel.getDefencePnl().setBackground(Color.BLUE);
+			  characterPanel.getDefencePnl().setForeground(Color.WHITE);
+		   }
+  
+		   @Override
+		   public void mouseExited(MouseEvent e) {
+			  characterPanel.getDefencePnl().setBackground(Color.GRAY);
+			  characterPanel.getDefencePnl().setForeground(Color.YELLOW);
+  
+		   }
 		});
-	}
+	 }
 
 	////////// CharacterSelectPanel/////////////////////////////////////////////
 
@@ -495,13 +495,13 @@ public class FrameController extends JFrame {
 			public void mouseEntered(MouseEvent e) {
 
 				mapPanel.getcharacterLabel().setBackground(Color.BLUE);
-				mapPanel.getcharacterLabel().setBackground(Color.WHITE);
+				mapPanel.getcharacterLabel().setForeground(Color.WHITE);
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
 				mapPanel.getcharacterLabel().setBackground(Color.GRAY);
-				mapPanel.getcharacterLabel().setBackground(Color.black);
+				mapPanel.getcharacterLabel().setForeground(Color.black);
 
 			}
 		});

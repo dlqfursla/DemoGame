@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import Data.MapLink;
 
 public class MapData {
-	private ArrayList<ArrayList<MapLink>> LabelsMappingList;
+	private ArrayList<ArrayList<MapLink>> LabelsMappingList; //데이터 전체 리스트
 	private ArrayList<MapLink> map1LabelsMapping;
 	private ArrayList<MapLink> map2LabelsMapping;
 	private ArrayList<MapLink> map3LabelsMapping;
