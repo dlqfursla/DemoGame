@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
 
-
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -12,7 +11,7 @@ import javax.swing.JPanel;
 public class StatsPanel extends BasePanel {
 
 	private JButton BackToMapBtn;
-	
+
 	private JPanel ExpeditionPnl;
 	private JLabel CharacterLbl;
 
@@ -25,27 +24,25 @@ public class StatsPanel extends BasePanel {
 	private JLabel[] StatsUpLbl;
 	private JLabel[][] StatsAllLbl; 
 
-
-	String[] StatsName = {"HP","Stamina","MaxAtk","MinAtk","Intelligence","Def","regeneration",""};
-
+	String[] StatsName = { "HP", "Stamina", "MaxAtk", "MinAtk", "Intelligence", "Def", "regeneration", "" };
 
 
 	private JPanel explanatioPnl;
 	private JLabel explanatioLbl;
+
 	public StatsPanel() {
 		super();
 		initStatsPanel();
 	}
-	
+
 	public JButton getBackToMapBtn() {
 		return BackToMapBtn;
 	}
-	
+
 	public JLabel getExplanatioLbl() {
 		return explanatioLbl;
 	}
 
-	
 	private void initStatsPanel() {
 		BackToMapBtn = new JButton("BackToMapBtn");
 		BackToMapBtn.setVisible(false);
@@ -70,7 +67,7 @@ public class StatsPanel extends BasePanel {
 		explanatioLbl.setForeground(Color.white);
 		explanatioPnl.add(explanatioLbl);
 
-		ExpeditionPnl= new JPanel();
+		ExpeditionPnl = new JPanel();
 		ExpeditionPnl.setLayout(null);
 		ExpeditionPnl.setBounds(20, 20, 1220, 650);
 		ExpeditionPnl.setOpaque(true);
@@ -123,10 +120,12 @@ public class StatsPanel extends BasePanel {
 			StatsNameLbl[i].setBackground(new Color(5*i,27*i,18*i));
 			StatsNameLbl[i].setForeground(Color.white);
 			StatsPnl.add(StatsNameLbl[i]);
+
 		}
 
 		StatsNumLbl = new JLabel[7];
 		for (int i = 0; i < 7; i++) {
+
 			StatsNumLbl[i] = new JLabel("123");
 			StatsNumLbl[i].setFont(new Font("Copperplate Gothic", Font.BOLD, 10));
 			StatsNumLbl[i].setOpaque(false);
@@ -134,10 +133,12 @@ public class StatsPanel extends BasePanel {
 			StatsNumLbl[i].setBackground(new Color(5*i,27*i,18*i));
 			StatsNumLbl[i].setForeground(Color.white);
 			StatsPnl.add(StatsNumLbl[i]);
+
 		}
 
 		StatsUpLbl = new JLabel[7];
 		for (int i = 0; i < 7; i++) {
+
 			StatsUpLbl[i] = new JLabel("▲");
 			StatsUpLbl[i].setFont(new Font("Copperplate Gothic", Font.BOLD, 10));
 			StatsUpLbl[i].setOpaque(false);
@@ -176,6 +177,7 @@ public class StatsPanel extends BasePanel {
 			StatsAllLbl[i][j].setForeground(Color.white);
 			StatsPnl.add(StatsAllLbl[i][j]);
 
+
 			}
 		}
 
@@ -197,5 +199,6 @@ public class StatsPanel extends BasePanel {
 		StatsPnl.add(StatsAllLbl[7][2]);
 
 	
+
 	}
 }
